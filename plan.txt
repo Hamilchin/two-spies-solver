@@ -1,0 +1,13 @@
+Gamestate:
+    public information (map state, player moves, current player)
+    private information (player locations)
+
+
+GameMap:
+    Nodes/edges
+
+GameTree:
+    init 
+    Gamestate
+    Probability distribution 
+    
