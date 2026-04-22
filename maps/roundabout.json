@@ -1,0 +1,43 @@
+{
+    "name": "Roundabout",
+    "cities": [
+      "London",
+      "Amsterdam",
+      "Stockholm",
+      "Berlin",
+      "Warsaw",
+      "Paris",
+      "Geneva",
+      "Vienna",
+      "Monaco",
+      "Venice",
+      "Rome"
+    ],
+    "edges": [
+      ["London", "Amsterdam"],
+      ["London", "Paris"],
+      ["Amsterdam", "Stockholm"],
+      ["Amsterdam", "Berlin"],
+      ["Stockholm", "Berlin"],
+      ["Stockholm", "Warsaw"],
+      ["Berlin", "Warsaw"],
+      ["Berlin", "Vienna"],
+      ["Berlin", "Geneva"],
+      ["Berlin", "Venice"],
+      ["Paris", "Geneva"],
+      ["Paris", "Monaco"],
+      ["Geneva", "Monaco"],
+      ["Geneva", "Venice"],
+      ["Vienna", "Warsaw"],
+      ["Vienna", "Venice"],
+      ["Monaco", "Venice"],
+      ["Monaco", "Rome"],
+      ["Venice", "Rome"]
+    ],
+    "large_cities": ["London", "Berlin", "Geneva"],
+    "start": {
+      "p1": "Paris",
+      "p2": "Venice"
+    }
+  }
+  
