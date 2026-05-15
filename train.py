@@ -66,7 +66,7 @@ def obs_dim(n_cities: int) -> int:
 
 
 # ---- Hyperparameters ----
-NUM_ROLLOUTS       = 25000
+NUM_ROLLOUTS       = 10000
 NUM_STEPS          = 4096    # total per rollout
 EPOCHS_PER_ROLLOUT = 4
 BATCH_SIZE         = 256
