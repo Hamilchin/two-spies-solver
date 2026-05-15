@@ -50,7 +50,7 @@ class TwoSpiesEnv(gym.Env):
 
     def __init__(self, map_or_path, *,
                  max_turns: int = 100,
-                 intel_reward: float = 0.005,
+                 intel_reward: float = 0.002,
                  world_events: bool = False,
                  closing_start_turn: int = 10):
         super().__init__()
