@@ -4,6 +4,7 @@ from datetime import datetime
 import torch
 import torch.nn.functional as F
 import wandb
+from tqdm import tqdm
 
 from env import (
     TwoSpiesEnv,
@@ -103,7 +104,8 @@ wandb.init(
 )
 
 
-for rollout in range(NUM_ROLLOUTS):
+pbar = tqdm(range(NUM_ROLLOUTS))
+for rollout in pbar:
 
     # ---- 1. Rollout phase --------------------------------------------------
     trajectories = []                # finalized per-player trajectories
@@ -229,6 +231,13 @@ for rollout in range(NUM_ROLLOUTS):
         "clip_fraction":    sum(clip_fractions) / len(clip_fractions),
         "advantage_std":    batch["advantage"].std().item(),
     })
+
+    pbar.set_postfix(
+        ret=f"{(sum(ep_returns) / len(ep_returns)) if ep_returns else 0.0:+.3f}",
+        pi=f"{sum(policy_losses) / len(policy_losses):+.3f}",
+        v=f"{sum(value_losses) / len(value_losses):.3f}",
+        H=f"{sum(entropies) / len(entropies):.3f}",
+    )
 
 # ---- Save final checkpoint ---------------------------------------------------
 os.makedirs("checkpoints", exist_ok=True)
